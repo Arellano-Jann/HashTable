@@ -6,9 +6,11 @@ class Entry {
     KeyType key;
     ValueType value;
 public:
-    Entry();
+    Entry()
         : key()
         , value() {}
+        // : key(nullptr)
+        // , value(nullptr) {}
     Entry(const KeyType& key, const ValueType& value)
         : key(key)
         , value(value) {}

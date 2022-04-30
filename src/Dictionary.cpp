@@ -1,6 +1,7 @@
 template <typename KeyType, typename ValueType>
 int Dictionary<KeyType, ValueType>::hash(const KeyType& key) const {
-    return std::hash<KeyType> keyHash(key) % hashTableSize; // spike this
+    std::hash<KeyType> keyHash;
+    return keyHash(key) % hashTableSize; // spike this
 }
 
 template <typename KeyType, typename ValueType>
@@ -39,11 +40,11 @@ bool Dictionary<KeyType, ValueType>::add(const KeyType& newKey, const ValueType&
 
 template <typename KeyType, typename ValueType>
 bool Dictionary<KeyType, ValueType>::remove(const KeyType& key){
-    int hashIndex = hash(newKey);
+    int hashIndex = hash(key);
 
     // key placing
     for (int i = hashIndex; i < hashTableSize; i++){ // this iterates through the hash table until it finds the key
-        if (hashTable[i].getKey() == newKey){ // if found, remove
+        if (hashTable[i].getKey() == key){ // if found, remove
             hashTable[i].setKey(nullptr);
             return true;
         }
@@ -61,6 +62,8 @@ bool Dictionary<KeyType, ValueType>::clear(){ // check if this is valid
             itemCount--;
         }
     }
+    return true;
+    // return itemCount == 0;
 }
 
 template <typename KeyType, typename ValueType>
