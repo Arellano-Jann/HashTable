@@ -73,10 +73,10 @@ bool Dictionary<KeyType, ValueType>::clear(){ // check if this is valid
 template <typename KeyType, typename ValueType>
 bool Dictionary<KeyType, ValueType>::contains(const KeyType& key) const{
     int index = hash(key);
-    while (hashTable[index].getKey() != key && index < hashTableSize){
-        index++;
+    do {
         if (hashTable[index].getKey() == key) return true;
-    }
+        index++;
+    } while (hashTable[index].getKey() != key && index < hashTableSize);
     return false;
 }
 
