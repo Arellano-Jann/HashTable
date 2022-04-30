@@ -61,10 +61,12 @@ bool Dictionary<KeyType, ValueType>::remove(const KeyType& key){
 
 template <typename KeyType, typename ValueType>
 bool Dictionary<KeyType, ValueType>::clear(){ // check if this is valid
-    while (itemCount > 0){
-        if (remove(hashTable[0].getKey())){
+    int i = 0;
+    while (itemCount > 0 && i < hashTableSize){
+        if (remove(hashTable[i].getKey())){
             itemCount--;
         }
+        i++;
     }
     return true;
     // return itemCount == 0;
@@ -88,5 +90,5 @@ ValueType Dictionary<KeyType, ValueType>::getValue(const KeyType& key) const{
 
 template <typename KeyType, typename ValueType>
 Dictionary<KeyType, ValueType>::~Dictionary(){
-    // clear();
+    clear();
 }
