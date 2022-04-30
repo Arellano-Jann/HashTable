@@ -9,13 +9,13 @@ class Dictionary {
     Entry hashTable[hashTableSize];
     int hash(const KeyType& key) const;
 public:
-    bool isEmpty() override;
-    int getNumberOfEntries() override;
+    bool isEmpty() const override;
+    int getNumberOfEntries() const override;
     bool add(const KeyType& newKey, const ValueType& newValue) override;
     bool remove(const KeyType& key) override;
     bool clear() override;
-    bool contains(const KeyType& key) override; // sees if key is inside dictionary
-    ValueType getValue(const KeyType& key) override; // gets the value of a key
+    bool contains(const KeyType& key) const override; // sees if key is inside dictionary
+    ValueType getValue(const KeyType& key) const override; // gets the value of a key
     ~Dictionary();
 };
 
