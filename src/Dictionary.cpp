@@ -88,5 +88,5 @@ ValueType Dictionary<KeyType, ValueType>::getValue(const KeyType& key) const{
 
 template <typename KeyType, typename ValueType>
 Dictionary<KeyType, ValueType>::~Dictionary(){
-    // clear();
+    clear();
 }
