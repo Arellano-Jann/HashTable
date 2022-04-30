@@ -1,6 +1,6 @@
 template <typename KeyType, typename ValueType>
 int Dictionary<KeyType, ValueType>::hash(const KeyType& key) const {
-
+    return std::hash<KeyType> keyHash(key);
 }
 
 template <typename KeyType, typename ValueType>
@@ -15,6 +15,10 @@ int Dictionary<KeyType, ValueType>::getNumberOfEntries() const{
 
 template <typename KeyType, typename ValueType>
 bool Dictionary<KeyType, ValueType>::add(const KeyType& newKey, const ValueType& newValue){
+    if (contains(newKey)) {
+        return false;
+    }
+    int hashIndex = hash(newKey);
 
 }
 
