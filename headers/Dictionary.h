@@ -1,10 +1,11 @@
 #pragma once
 #define DICTIONARY_H
 #include "Entry.h"
+#include "DictionaryInterface.h"
 #include <functional>
 
 template <typename KeyType, typename ValueType>
-class Dictionary {
+class Dictionary : public DictionaryInterface<KeyType, ValueType> {
     static const int hashTableSize = 1024;
     int itemCount = 0;
     Entry<KeyType, ValueType> hashTable[hashTableSize]; // is this correct?
