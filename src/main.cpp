@@ -9,19 +9,19 @@ int main(){
     Dictionary<std::string, std::string> dict;
     // Dictionary<int, int> dict;
 
-    std::cout << dict.add("John", "775-555-1234");
-    // std::cout << dict.add("Jane", "775-555-1235");
-    // std::cout << dict.add("Joe", "775-555-1236");
-    // std::cout << dict.add("Jill", "775-555-1237");
-    // std::cout << dict.contains("Jill");
-    // std::cout << dict.getValue("Jill");
+    std::cout << dict.add("John", "775-555-1234") << std::endl;
+    std::cout << dict.add("Jane", "775-555-1235") << std::endl;
+    std::cout << dict.add("Joe", "775-555-1236") << std::endl;
+    std::cout << dict.add("Jill", "775-555-1237") << std::endl;
+    std::cout << dict.contains("Jill") << std::endl;
+    std::cout << dict.getValue("Jill") << std::endl;
 
-    // std::cout << dict.add("Jack", "775-555-1238");
-    // std::cout << dict.add("Jill", "775-555-1239"); // update
-    // std::cout << dict.contains("Jill");
-    // std::cout << dict.getValue("Jill");
-    // std::cout << dict.remove("Jill");
-    // std::cout << dict.contains("Jill");
+    std::cout << dict.add("Jack", "775-555-1238") << std::endl;
+    std::cout << dict.add("Jill", "775-555-1239") << std::endl; // update
+    std::cout << dict.contains("Jill") << std::endl;
+    std::cout << dict.getValue("Jill") << std::endl;
+    std::cout << dict.remove("Jill") << std::endl;
+    std::cout << dict.contains("Jill") << std::endl;
     // dict // prints out the dictionary
     return 0;
 }
