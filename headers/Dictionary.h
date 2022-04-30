@@ -7,7 +7,7 @@ template <typename KeyType, typename ValueType>
 class Dictionary {
     static const int hashTableSize = 1024;
     int itemCount = 0;
-    Entry hashTable[hashTableSize];
+    Entry<KeyType, ValueType> hashTable[hashTableSize]; // is this correct?
     int hash(const KeyType& key) const;
 public:
     bool isEmpty() const override;
