@@ -6,7 +6,8 @@
 int main(){
     // Dictionary<std::string, int> dict;
     // Dictionary<int, std::string> dict;
-    Dictionary<std::string, std::string> dict;
+    // Dictionary<std::string, std::string> dict;
+    Dictionary<int, int> dict;
 
     // dict.add("John", "775-555-1234");
     // dict.add("Jane", "775-555-1235");

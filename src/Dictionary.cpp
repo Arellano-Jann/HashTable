@@ -23,14 +23,17 @@ bool Dictionary<KeyType, ValueType>::add(const KeyType& newKey, const ValueType&
 
     // key placing
     for (int i = hashIndex; i < hashTableSize; i++){ // this iterates through the hash table until it finds an empty spot to place the key value pair
-        if (hashTable[i].getKey() == newKey){ // if already exists then overwrite value
-            hashTable[i].setValue(newValue);
+        // if (hashTable[i] == nullptr){
+        if (hashTable[i] == Entry<KeyType, ValueType>()){ // if nothing exists in hash table slot
+            // hashTable[i].setKey(newKey);
+            // hashTable[i].setValue(newValue);
+            hashTable[i] = Entry<KeyType, ValueType>(newKey, newValue);
+            itemCount++;
             return true;
         }
-        if (hashTable[i].getKey() == nullptr){ // if nothing exists in hash table slot
-            hashTable[i].setKey(newKey);
-            hashTable[i].setValue(newValue);
-            itemCount++;
+        if (hashTable[i].getKey() == newKey){ // if already exists then overwrite value
+            // hashTable[i].setValue(newValue); // idk which is the better implement
+            hashTable[i] = Entry<KeyType, ValueType>(newKey, newValue);
             return true;
         }
         // otherwise keep iterating until you find an empty slot
@@ -44,12 +47,13 @@ bool Dictionary<KeyType, ValueType>::remove(const KeyType& key){
 
     // key placing
     for (int i = hashIndex; i < hashTableSize; i++){ // this iterates through the hash table until it finds the key
-        if (hashTable[i].getKey() == key){ // if found, remove
-            hashTable[i].setKey(nullptr);
-            return true;
-        }
-        if (hashTable[i].getKey() == nullptr){ // if nothing exists in hash table slot
+        // if (hashTable[i] == nullptr){
+        if (hashTable[i] == Entry<KeyType, ValueType>()){ // if nothing exists in hash table slot
             return false;
+        }
+        if (hashTable[i].getKey() == key){ // if found, remove
+            hashTable[i] = Entry<KeyType, ValueType>();
+            return true;
         }
     }
     return false;
@@ -84,5 +88,5 @@ ValueType Dictionary<KeyType, ValueType>::getValue(const KeyType& key) const{
 
 template <typename KeyType, typename ValueType>
 Dictionary<KeyType, ValueType>::~Dictionary(){
-    clear();
+    // clear();
 }
