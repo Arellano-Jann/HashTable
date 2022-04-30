@@ -6,6 +6,7 @@
 template <typename KeyType, typename ValueType>
 class Dictionary {
     static const int hashTableSize = 1024;
+    int itemCount = 0;
     Entry hashTable[hashTableSize];
     int hash(const KeyType& key) const;
 public:
