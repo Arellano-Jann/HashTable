@@ -89,6 +89,16 @@ ValueType Dictionary<KeyType, ValueType>::getValue(const KeyType& key) const{
 }
 
 template <typename KeyType, typename ValueType>
+void Dictionary<KeyType, ValueType>::printHashTable() const{
+    for (int i = 0; i < hashTableSize; i++){
+        if (hashTable[i] != Entry<KeyType, ValueType>()){
+            std::cout << "Key: " << hashTable[i].getKey() << " Value: " << hashTable[i].getValue() << std::endl;
+        }
+        // std::cout << "Index: " << i << " Key: " << hashTable[i].getKey() << " Value: " << hashTable[i].getValue() << std::endl;
+    }
+}
+
+template <typename KeyType, typename ValueType>
 Dictionary<KeyType, ValueType>::~Dictionary(){
     clear();
 }

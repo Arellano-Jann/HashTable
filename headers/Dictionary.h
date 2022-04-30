@@ -18,6 +18,7 @@ public:
     bool clear() override;
     bool contains(const KeyType& key) const override; // sees if key is inside dictionary
     ValueType getValue(const KeyType& key) const override; // gets the value of a key
+    void printHashTable() const;
     ~Dictionary();
 };
 

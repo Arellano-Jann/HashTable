@@ -22,6 +22,6 @@ int main(){
     std::cout << std::boolalpha << dict.getValue("Jill") << std::endl;
     std::cout << std::boolalpha << dict.remove("Jill") << std::endl;
     std::cout << std::boolalpha << dict.contains("Jill") << std::endl;
-    // dict // prints out the dictionary
+    dict.printHashTable(); // prints out the dictionary
     return 0;
 }
