@@ -21,3 +21,5 @@ public:
     bool operator >(const Entry<KeyType, ValueType>& rhs) const; // checks if the entry is greater than rhs entry
     bool operator >(const KeyType& rhs) const; // checks if the key is greater than rhs key
 };
+
+#include "../src/Entry.cpp"

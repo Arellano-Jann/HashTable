@@ -18,3 +18,5 @@ public:
     ValueType getValue(const KeyType& key) override; // gets the value of a key
     ~Dictionary();
 };
+
+#include "../src/Dictionary.cpp"
